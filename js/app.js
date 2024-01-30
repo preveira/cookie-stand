@@ -1,11 +1,9 @@
 'use strict';
 
-// Function to generate a random number between min and max (inclusive)
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-// Object constructor for a location
 function City(cityName, minCustomers, maxCustomers, avgCookiesPerCustomer) {
   this.cityName = cityName;
   this.minCustomers = minCustomers;
@@ -20,7 +18,6 @@ function City(cityName, minCustomers, maxCustomers, avgCookiesPerCustomer) {
   };
 }
 
-// Creating instances for each location
 var seattle = new City("Seattle", 23, 65, 6.3);
 var tokyo = new City("Tokyo", 3, 24, 1.2);
 var dubai = new City("Dubai", 11, 38, 3.7);
@@ -29,7 +26,6 @@ var lima = new City("Lima", 2, 16, 4.6);
 
 var cities = [seattle, tokyo, dubai, paris, lima];
 
-// Simulate hourly sales for 14 hours starting from 6am
 for (var hour = 6; hour <= 19; hour++) {
   cities.forEach(function (city) {
     var displayHour = hour <= 12 ? hour + 'am' : (hour - 12) + 'pm';
@@ -37,7 +33,6 @@ for (var hour = 6; hour <= 19; hour++) {
   });
 }
 
-// Display simulated amounts of cookies purchased for each city and hour as unordered lists
 cities.forEach(function (city) {
   displayArrayAsList(city.cityName);
   for (var i = 0; i < city.hourlySales.length; i++) {
@@ -47,7 +42,6 @@ cities.forEach(function (city) {
   displayArrayAsList("Total: " + city.hourlySales.reduce((acc, val) => acc + val, 0) + " cookies");
 });
 
-// Function to display an array as an unordered list in the browser
 function displayArrayAsList(label, array) {
   var listItem = document.createElement('li');
   listItem.textContent = label;

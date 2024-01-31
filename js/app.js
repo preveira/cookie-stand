@@ -4,7 +4,7 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function displayArrayAsList(data) {
+function displayArrayAsTable(data) {
 
 }
 
@@ -24,8 +24,8 @@ City.prototype.calculateDailyTotal = function () {
 };
 
 City.prototype.simulateHourlySales = function () {
-  var randomCustomers = getRandomInt(this.minCustomers, this.maxCustomers);
-  var cookiesPurchased = Math.floor(randomCustomers * this.avgCookiesPerCustomer);
+  let randomCustomers = getRandomInt(this.minCustomers, this.maxCustomers);
+  let cookiesPurchased = Math.floor(randomCustomers * this.avgCookiesPerCustomer);
   this.hourlySales.push(cookiesPurchased);
   this.calculateDailyTotal(); 
   return cookiesPurchased;
@@ -40,15 +40,15 @@ City.prototype.drawRow = function () {
 };
 
 
-var seattle = new City("Seattle", 23, 65, 6.3);
-var tokyo = new City("Tokyo", 3, 24, 1.2);
-var dubai = new City("Dubai", 11, 38, 3.7);
-var paris = new City("Paris", 20, 38, 2.3);
-var lima = new City("Lima", 2, 16, 4.6);
-var cities = [seattle, tokyo, dubai, paris, lima];
+let seattle = new City("Seattle", 23, 65, 6.3);
+let tokyo = new City("Tokyo", 3, 24, 1.2);
+let dubai = new City("Dubai", 11, 38, 3.7);
+let paris = new City("Paris", 20, 38, 2.3);
+let lima = new City("Lima", 2, 16, 4.6);
+let cities = [seattle, tokyo, dubai, paris, lima];
 
 
-for (var hour = 6; hour <= 20; hour++) {
+for (let hour = 6; hour <= 20; hour++) {
   cities.forEach(function (city) {
     city.simulateHourlySales();
   });

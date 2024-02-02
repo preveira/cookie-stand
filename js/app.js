@@ -53,7 +53,7 @@ createCell('', headerRow);
 for (let hour = 6; hour <= 20; hour++) {
   createCell(hour <= 12 ? hour + 'am' : (hour - 12) + 'pm', headerRow);
 }
-createCell('Daily Totals', headerRow); 
+createCell('Location Totals', headerRow); 
 tHeadElement.appendChild(headerRow);
 
 cities.forEach(function (city) {
@@ -62,7 +62,7 @@ cities.forEach(function (city) {
 });
 
 let totalColumn = document.createElement('tr');
-createCell('Location Totals', totalColumn); 
+createCell('Hourly Totals for all Locations', totalColumn); 
 for (let i = 0; i < seattle.hourlySales.length; i++) {
   let hourlyTotal = cities.reduce((acc, city) => acc + city.hourlySales[i], 0);
   createCell(hourlyTotal, totalColumn);

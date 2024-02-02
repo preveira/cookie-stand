@@ -90,32 +90,26 @@ function createCell(value, row) {
   row.appendChild(cell);
 }
 
-// ... (Your existing code)
-
-// Add the event listener for form submission
 document.getElementById('table-form').addEventListener('submit', handleForm);
 
-// Function to handle form submission
 function handleForm(event) {
   event.preventDefault();
 
-  // Get form input values
   let name = event.target.location.value;
   let minCustomers = parseInt(event.target['min-customers'].value);
   let maxCustomers = parseInt(event.target['max-customers'].value);
   let avgCookiesPerCustomer = parseFloat(event.target['avg-cookies'].value);
 
-  // Create a new City instance
+
   let newCity = new City(name, minCustomers, maxCustomers, avgCookiesPerCustomer);
 
-  // Simulate hourly sales for the new city
   for (let hour = 6; hour <= 20; hour++) {
     newCity.simulateHourlySales();
   }
 
-  // Draw the new city row
+
   newCity.drawRow();
 
-  // Append the new city row to the table body
+
   document.getElementById('table-data').appendChild(newCity.row);
 

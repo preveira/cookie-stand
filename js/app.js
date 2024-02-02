@@ -112,4 +112,4 @@ function handleForm(event) {
 
 
   document.getElementById('table-data').appendChild(newCity.row);
-}
+

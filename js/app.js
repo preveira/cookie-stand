@@ -45,6 +45,8 @@ let tokyo = new City("Tokyo", 3, 24, 1.2);
 let dubai = new City("Dubai", 11, 38, 3.7);
 let paris = new City("Paris", 20, 38, 2.3);
 let lima = new City("Lima", 2, 16, 4.6);
+
+
 let cities = [seattle, tokyo, dubai, paris, lima];
 
 
@@ -87,3 +89,4 @@ function createCell(value, row) {
   cell.textContent = value;
   row.appendChild(cell);
 }
+

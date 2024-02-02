@@ -118,4 +118,4 @@ function handleForm(event) {
 
   // Append the new city row to the table body
   document.getElementById('table-data').appendChild(newCity.row);
-}
+

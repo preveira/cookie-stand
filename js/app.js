@@ -81,7 +81,7 @@ document.getElementById('table-form').addEventListener('submit', handleForm);
 function handleForm(event) {
   event.preventDefault();
   
-
+  let name = event.target.location.value
   let minCustomers = parseInt(event.target['min-customers'].value);
   let maxCustomers = parseInt(event.target['max-customers'].value);
   let avgCookiesPerCustomer = parseFloat(event.target['avg-cookies'].value);
